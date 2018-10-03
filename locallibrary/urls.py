@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-# from catalog import views
+from catalog import views
 from django.views.generic import RedirectView
 
 
@@ -24,3 +24,4 @@ urlpatterns = [
     path('catalog/', include('catalog.urls')),
     path('', RedirectView.as_view(url='/catalog/', permanent=True)),
 ]
+# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
